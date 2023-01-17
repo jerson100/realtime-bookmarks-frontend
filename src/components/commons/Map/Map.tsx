@@ -1,13 +1,9 @@
 import { useEffect } from "react";
-import {
-  FitBoundsOptions,
-  LatLng,
-  LatLngBoundsExpression,
-  MapOptions,
-} from "leaflet";
+import { LatLng, MapOptions } from "leaflet";
 import { TileLayer, useMap } from "react-leaflet";
 import { MapContainerStyle } from "./map.style";
 import "leaflet/dist/leaflet.css";
+import { AnimateProps } from "../../../types";
 
 interface MapProps {
   children?: JSX.Element | JSX.Element[];
@@ -37,11 +33,6 @@ const Map = ({
     </MapContainerStyle>
   );
 };
-
-interface AnimateProps {
-  positions?: LatLngBoundsExpression;
-  options?: FitBoundsOptions;
-}
 
 const Animate = ({
   positions,
