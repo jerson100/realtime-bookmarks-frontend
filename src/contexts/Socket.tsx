@@ -8,7 +8,7 @@ export const SocketContext = createContext<SocketContextProps>({
 });
 
 const Socket: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const socket = useSocket("http://localhost:1200", {
+  const socket = useSocket(import.meta.env.VITE_URL, {
     autoConnect: false,
     reconnectionDelay: 5000,
     reconnectionAttempts: 5,
